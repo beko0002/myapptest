@@ -1,25 +1,10 @@
-name: CI Workflow
-
-on:
-  push:
-    branches:
-      - main
-
+name: CIN workflow
+on: [push]
 jobs:
-  build:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
+      - run: echo "Good Job!"
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm test
